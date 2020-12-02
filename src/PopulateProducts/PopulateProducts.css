@@ -1,0 +1,40 @@
+.PopulateProducts {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 20px;
+  padding: 10%;
+  justify-content: space-evenly;
+}
+.product-ul {
+  padding-left: 0;
+  background-color: white;
+  list-style-type: none;
+  flex: 1 0 auto;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 7px 6px -6px rgba(0, 0, 0, 0.4);
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+}
+.product-item {
+  margin: 10px;
+}
+.product-li {
+  height: inherit;
+}
+
+@media all and (min-width: 800px) {
+  .PopulateProducts {
+    flex-direction: row;
+    margin: 0;
+    padding: 30px;
+  }
+  .product-ul {
+    margin: 30px;
+    min-height: 300px;
+    max-height: 300px;
+    max-width: 200px;
+  }
+}
