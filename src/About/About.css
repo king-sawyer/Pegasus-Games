@@ -1,0 +1,22 @@
+.About {
+  display: flex;
+  flex-direction: column;
+}
+.flex-item {
+  flex: 1;
+}
+.info {
+  background-color: white;
+  padding: 5%;
+  height: inherit;
+}
+.facebook {
+  padding: 5%;
+  margin-top: -20px;
+}
+
+@media all and (min-width: 800px) {
+  .About {
+    flex-direction: row;
+  }
+}

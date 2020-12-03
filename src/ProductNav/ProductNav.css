@@ -1,0 +1,18 @@
+.ProductNav {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+.flex-form {
+  display: flex;
+  width: 100%;
+  background-color: darkgray;
+
+  border: 2px solid darkgray;
+  border-radius: 10px;
+}
+
+.flexItem {
+  margin: 10px;
+  flex: 1;
+}

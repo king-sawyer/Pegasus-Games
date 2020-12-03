@@ -10,7 +10,7 @@ function PopulateProducts(props) {
           <div className="product-item">
             <Link to={item.link}>
               <ul className="product-ul">
-                <li className="product-li" key={item.id}>
+                <li className="product-image" key={item.id}>
                   {" "}
                   <img src={item.img} alt="product" />
                 </li>
