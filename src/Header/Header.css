@@ -21,7 +21,7 @@
   padding: 5px;
   text-align: center;
   justify-content: center;
-  list-style-type: none; /*Gets rid of bullets*/
+  list-style-type: none;
 }
 h1 {
   text-align: center;
@@ -46,21 +46,17 @@ a:active {
   text-decoration: none;
 }
 
-.mobile-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 50px;
-  height: 50px;
-}
-
 @media all and (min-width: 800px) {
-  .header {
+  .mobile-nav {
+    display: none;
+  }
+  .browser-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row-reverse;
   }
+
   .header-ul {
     flex: 1;
     flex-direction: row;
@@ -71,21 +67,29 @@ a:active {
     width: 100%;
     margin-right: 50px;
   }
-  /* .header {
-    padding: 0.05%;
+}
+
+@media all and (max-width: 800px) {
+  .browser-nav {
+    display: none;
   }
   h1 {
-    font-size: 2vw;
-    margin-right: 30%;
-    flex-wrap: nowrap;
-    width: 100%;
-  }*/
-
-  .header-ul {
-    display: true;
+    padding-bottom: 20px;
   }
-
   .mobile-icon {
-    display: none;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    width: 50px;
+    height: 40px;
+  }
+  .header-ul {
+    margin-top: -25px;
+  }
+}
+
+@media all and (max-width: 350px) {
+  h1 {
+    font-size: 25px;
   }
 }
