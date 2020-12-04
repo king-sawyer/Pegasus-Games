@@ -8,6 +8,8 @@ import Magic from "./Magic/Magic";
 import "./App.css";
 import RPG from "./RPG/RPG";
 import About from "./About/About";
+import SpecificProduct from "./SpecificProduct/SpecificProduct";
+import data from "./dummy-store";
 
 function App() {
   return (
@@ -16,6 +18,10 @@ function App() {
 
       <div className="main-page">
         <Route path="/about" component={About} />
+        <Route
+          path="/item/:id"
+          render={(rprops) => <SpecificProduct {...rprops} data={data} />}
+        />
         <Route path="/rpg" component={RPG} />
         <Route path="/magic" component={Magic} />
         <Route path="/board-games" component={BoardGamePage} />

@@ -29,17 +29,17 @@ class Header extends React.Component {
                   <b>Board Games</b>
                 </li>
               </Link>
-              <Link to="magic">
+              <Link to="/magic">
                 <li className="header-li">
                   <b>Magic</b>
                 </li>
               </Link>
-              <Link to="rpg">
+              <Link to="/rpg">
                 <li className="header-li">
                   <b>RPG</b>
                 </li>
               </Link>
-              <Link to="about">
+              <Link to="/about">
                 <li className="header-li">
                   <b>About</b>
                 </li>
@@ -58,17 +58,17 @@ class Header extends React.Component {
                 <b>Board Games</b>
               </li>
             </Link>
-            <Link to="magic">
+            <Link to="/magic">
               <li className="header-li">
                 <b>Magic</b>
               </li>
             </Link>
-            <Link to="rpg">
+            <Link to="/rpg">
               <li className="header-li">
                 <b>RPG</b>
               </li>
             </Link>
-            <Link to="about">
+            <Link to="/about">
               <li className="header-li">
                 <b>About</b>
               </li>
@@ -81,5 +81,3 @@ class Header extends React.Component {
 }
 
 export default Header;
-
-// OK, one pure CSS solution would be like this, you create two menus, one is for large screen and the other one is for smaller screen. For large screen size, the media query can just always show the large one, and hide the small one. For small screen size, the media query can always hide the large one and allow your current logic to work with the smaller screen.

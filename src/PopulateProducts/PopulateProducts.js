@@ -8,7 +8,7 @@ function PopulateProducts(props) {
       {props.data.map((item) => {
         return (
           <div className="product-item">
-            <Link to={item.link}>
+            <Link to={`/item/${item.id}`}>
               <ul className="product-ul">
                 <li className="product-image" key={item.id}>
                   {" "}
