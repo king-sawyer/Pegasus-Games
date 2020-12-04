@@ -19,17 +19,27 @@ img {
   padding: 5% 25%;
 }
 .featured-item-first {
+  background-color: white;
+  margin: 10px;
   flex: 1;
+  box-shadow: 0 7px 6px -6px rgba(0, 0, 0, 0.4);
 }
 .featured-item-second {
+  background-color: white;
+  margin: 10px;
   flex: 1;
+  box-shadow: 0 7px 6px -6px rgba(0, 0, 0, 0.4);
 }
 .featured-item-third {
+  background-color: white;
+  margin: 10px;
   flex: 1;
+  box-shadow: 0 7px 6px -6px rgba(0, 0, 0, 0.4);
 }
 
 .featured-ul {
   list-style-type: none;
+  padding-left: 0;
 }
 
 @media all and (min-width: 800px) {
