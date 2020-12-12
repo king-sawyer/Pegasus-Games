@@ -38,19 +38,19 @@ class Header extends React.Component {
                   <b>Magic</b>
                 </li>
               </Link>
-<<<<<<< HEAD
               <Link to="/rpg">
-                <li className="header-li">
-=======
-              <Link to="rpg">
                 <li className="header-li" id="rpg">
->>>>>>> 435486d13475de882d1ac9e21cddf5cccfaa3f78
                   <b>RPG</b>
                 </li>
               </Link>
               <Link to="/about">
                 <li className="header-li">
                   <b>About</b>
+                </li>
+              </Link>
+              <Link to="/admin">
+                <li className="header-li">
+                  <b>ADMIN</b>
                 </li>
               </Link>
             </ul>
@@ -84,6 +84,11 @@ class Header extends React.Component {
             <Link to="/about">
               <li className="header-li">
                 <b>About</b>
+              </li>
+            </Link>
+            <Link to="/admin">
+              <li className="header-li">
+                <b>ADMIN</b>
               </li>
             </Link>
           </ul>

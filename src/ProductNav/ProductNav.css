@@ -1,18 +1,23 @@
 .ProductNav {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
+  background-color: darkgrey;
+  padding: 20px 10px;
 }
 .flex-form {
+  background-color: lightgray;
+  border: 2px solid grey;
+  padding: 10px;
+  border-radius: 5px;
   display: flex;
-  width: 100%;
-  background-color: darkgray;
-
-  border: 2px solid darkgray;
-  border-radius: 10px;
+  flex-direction: column;
 }
 
 .flexItem {
-  margin: 10px;
   flex: 1;
+  padding: 0;
+}
+
+@media all and (min-width: 800px) {
+  .flex-form {
+    flex-direction: row;
+  }
 }

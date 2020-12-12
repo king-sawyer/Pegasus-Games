@@ -1,17 +1,22 @@
 import React from "react";
-import ProductNav from "../ProductNav/ProductNav";
+// import ProductNav from "../ProductNav/ProductNav";
 import PopulateProducts from "../PopulateProducts/PopulateProducts";
-import data from "../dummy-store";
+import Context from "../Context";
 
-function BoardGamePage() {
-  return (
-    <div className="MagicPage">
-      <div className="magic-page">
-        <ProductNav />
-        <PopulateProducts data={data.magic} />
+class BoardGamePage extends React.Component {
+  static contextType = Context;
+  render() {
+    let magicProducts = this.context.products.filter((product) => {
+      return product.category === "magic";
+    });
+    return (
+      <div className="MagicPage">
+        <div className="magic-page">
+          {/* <ProductNav /> */}
+          <PopulateProducts data={magicProducts} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
-
 export default BoardGamePage;

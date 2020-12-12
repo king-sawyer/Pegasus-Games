@@ -1,3 +1,65 @@
-.pictures-of-store {
-  padding: 5% 10%;
+/* .pictures-of-store {
+height: 100%} */
+
+.imageHolder {
+  background-color: black;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  display: flex;
+  flex-direction: row;
+
+  max-height: 500px;
+}
+.mainPageImage {
+  flex: 0 0 auto;
+  padding: 0px 10px;
+  width: 60%;
+}
+.imageHolderButSmaller {
+  display: none;
+}
+
+@media all and (min-width: 800px) {
+  .homePageDiv {
+    background-color: black;
+  }
+  .imageHolder {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .mainPageImage {
+    flex: 1 1 auto;
+    padding: 10px;
+    transition: transform 0.2s;
+  }
+  .mainPageImage:hover {
+    transform: scale(1.1);
+  }
+
+  .mainPageImageButSmaller:hover {
+    transform: scale(1.2);
+  }
+  .imageHolderButSmaller {
+    max-height: 200px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .mainPageImageButSmaller {
+    max-height: 150px;
+    flex: 1 1 auto;
+    padding: 10px;
+    transition: transform 0.2s;
+    width: 50%;
+    overflow: hidden;
+  }
 }

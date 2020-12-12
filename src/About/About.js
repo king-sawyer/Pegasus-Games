@@ -28,8 +28,7 @@ function About() {
             style={{ border: "none" }}
             scrolling="no"
             frameBorder="0"
-            allowFullScreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen={true}
             title="fb"
           ></iframe>
         </div>

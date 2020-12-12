@@ -1,0 +1,33 @@
+.specific-product-ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  width: 300px;
+  background-color: white;
+  box-shadow: 0 7px 6px -6px rgba(0, 0, 0, 0.4);
+  padding: 0 10px;
+  margin: 5% auto;
+}
+h2 {
+  padding-left: 10px;
+}
+
+.flex-item {
+  padding-left: 0;
+  flex: 1;
+  max-width: 300px;
+  margin: 5%;
+}
+.specific-product-li {
+  font-size: 3vw;
+}
+
+@media all and (min-width: 800px) {
+  .specific-product-ul {
+    flex-direction: row;
+    width: 600px;
+  }
+  .specific-product-li {
+    font-size: 1.5vw;
+  }
+}

@@ -16,9 +16,9 @@ img {
   display: flex;
   text-align: center;
   flex-direction: column;
-  padding: 5% 25%;
+  padding: 0px 25%;
 }
-.featured-item-first {
+.featured-item-div {
   background-color: white;
   margin: 10px;
   flex: 1;
@@ -46,7 +46,8 @@ img {
   .featured-flex-container {
     font-size: 1vw;
     flex-direction: row;
-    padding: 5% 10%;
+    padding: 0 10%;
+    padding-bottom: 20px;
   }
   .feature-h3 {
     font-size: 1.5vw;

@@ -8,21 +8,22 @@ function ProductNav() {
         <div className="flexItem">
           <form className="flex-form">
             <label className="flexItem">
-              Search:
-              <input type="text" className="flexItem" />
+              Search: <input type="text" />
             </label>
-            <br />
-
             <div className="flexItem">
-              <select>
-                <option>None</option>
-                <option>Alphabetically</option>
-                <option>Price High-Low</option>
-                <option>Price Low-High</option>
-              </select>
+              <label>
+                Filter:{" "}
+                <select>
+                  <option>None</option>
+                  <option>Alphabetically</option>
+                  <option>Price High-Low</option>
+                  <option>Price Low-High</option>
+                </select>
+              </label>
             </div>
-
-            <input type="submit" className="flexItem" />
+            <div className="flexItem">
+              <input type="submit" />
+            </div>
           </form>
         </div>
       </div>
@@ -35,62 +36,30 @@ function ProductNav() {
         <form className="flex-form">
           <div className="flexItem">
             <label>
-              Search:
-              <input type="text" />
+              Search: <input type="text" />
             </label>{" "}
           </div>
-          <br />
           <div className="flexItem">
             <label>
-              All
-              <input type="radio" name="query" value="" className="flexItem" />
-            </label>{" "}
-          </div>
-          <br />
-          <div className="flexItem">
-            <label>
-              Singles
-              <input
-                type="radio"
-                name="query"
-                value="singles"
-                className="flexItem"
-              />
+              Single Card Filter:{" "}
+              <select>
+                <option>All</option>
+                <option>Single</option>
+              </select>
             </label>
           </div>
-          <br />
-          <div className="flexItem">
-            <label>
-              Booster Packs
-              <input
-                type="radio"
-                name="query"
-                value="boosterPacks"
-                className="flexItem"
-              />
-            </label>
-          </div>
-          <br />
+
           <div className="flexItem">
             <label>
               {" "}
-              Booster Boxes
-              <input
-                type="radio"
-                name="query"
-                value="boosterBoxes"
-                className="flexItem"
-              />
+              Filter:{" "}
+              <select>
+                <option>None</option>
+                <option>Alphabetically</option>
+                <option>Price High-Low</option>
+                <option>Price Low-High</option>
+              </select>
             </label>
-          </div>
-          <br />
-          <div className="flexItem">
-            <select>
-              <option>None</option>
-              <option>Alphabetically</option>
-              <option>Price High-Low</option>
-              <option>Price Low-High</option>
-            </select>
           </div>
           <div className="flexItem">
             <input type="submit" />

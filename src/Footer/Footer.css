@@ -1,5 +1,5 @@
 .footer {
-  background-color: grey;
+  background-color: rgb(65, 105, 225);
   width: 100%;
   display: flex;
   align-items: center;
@@ -14,11 +14,24 @@
 }
 .hours {
   flex: 1;
+  margin: 20px;
+  background-color: white;
+  border: 3px lightgrey solid;
+  padding: 10px;
+  border-radius: 5%;
 }
 .general-info {
   align-items: start;
   padding-right: 20px;
   flex: 1;
+}
+
+.styling {
+  border: 3px lightgrey solid;
+  background-color: white;
+  border-radius: 5%;
+  padding: 10px;
+  margin-top: 20px;
 }
 
 .hours-ul {
@@ -52,5 +65,12 @@
   }
   .general-info {
     align-items: start;
+  }
+  .hours {
+    margin-right: 15%;
+    margin-bottom: 15%;
+  }
+  .styling {
+    margin-right: 15%;
   }
 }
