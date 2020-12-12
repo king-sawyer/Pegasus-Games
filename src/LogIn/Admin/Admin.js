@@ -9,14 +9,29 @@ class Admin extends React.Component {
     chosenProduct: 0,
     displayModify: false,
     displayAdd: false,
+    error: null,
+    addMessage: null,
+    modifyProductMessage: null,
   };
   static contextType = Context;
   handleChange = (id) => {
     this.setState({
-      chosenProduct: this.context.products.find((product) => {
-        return product.id == id;
-      }),
+      error: null,
+      modifyProductMessage: null,
+      addMessage: null,
     });
+    if (id !== "blank") {
+      this.setState({
+        chosenProduct: this.context.products.find((product) => {
+          return product.id == id;
+        }),
+      });
+      if (id === "blank") {
+        this.setState({
+          chosenProduct: null,
+        });
+      }
+    }
   };
   displayModify = () => {
     this.setState({
@@ -95,6 +110,9 @@ class Admin extends React.Component {
     }
   };
   addProduct = (e) => {
+    this.setState({
+      addMessage: null,
+    });
     e.preventDefault();
     const {
       title,
@@ -124,7 +142,17 @@ class Admin extends React.Component {
       },
       body: JSON.stringify(newProduct),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          return res.json().then((e) => Promise.reject(e));
+        } else {
+          this.setState({
+            addMessage:
+              "Product successfully added! To see the product, click on the relevant page and refresh!",
+          });
+        }
+        res.json();
+      })
       .then((product) => {
         this.context.products = [...this.context.products, product];
       })
@@ -136,6 +164,7 @@ class Admin extends React.Component {
   modifyProduct = (e) => {
     e.preventDefault();
     const {
+      id,
       title,
       price,
       available,
@@ -145,6 +174,7 @@ class Admin extends React.Component {
       featuredSelect,
     } = e.target;
     const modifiedProduct = {
+      id: this.state.chosenProduct.id,
       title: title.value,
       price: price.value,
       available: available.value,
@@ -153,24 +183,65 @@ class Admin extends React.Component {
       category: categorySelect.value,
       featured: featuredSelect.value,
     };
-    console.log(modifiedProduct);
 
     fetch(`http://localhost:8000/api/products`, {
-      method: "patch",
+      method: "PATCH",
       headers: {
         Authorization: "bearer " + tokenService.hasAuthToken(),
         "Content-Type": "application/json",
       },
       body: JSON.stringify(modifiedProduct),
     })
-      .then((res) => res.json())
-      .then((product) => {
-        this.context.products = [...this.context.products, product];
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((e) => Promise.reject(e));
+        } else {
+          this.setState({
+            modifyProductMessage: "Product successfully modified!",
+          });
+        }
       })
+
       .catch((error) => {
         console.error(error);
       });
   };
+
+  deleteProduct = (e) => {
+    this.setState({ error: null });
+    e.preventDefault();
+    let { id } = this.state.chosenProduct;
+    let productToDelete = { id };
+
+    fetch(`http://localhost:8000/api/products`, {
+      method: "DELETE",
+      headers: {
+        Authorization: "bearer " + tokenService.hasAuthToken(),
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(productToDelete),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response
+            .json()
+            .then(
+              (e) => Promise.reject(e),
+              this.setState({ error: "Please select an item to delete" })
+            );
+        } else {
+          this.setState({
+            error:
+              "Product successfully deleted! To see the change, go to the relevant page and refresh.",
+          });
+        }
+      })
+
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   render() {
     this.context.products.sort((a, b) => {
       if (a.title < b.title) return -1;
@@ -189,6 +260,7 @@ class Admin extends React.Component {
               <label>
                 Products to modify:{" "}
                 <select>
+                  <option value="blank">-----</option>
                   {this.context.products.map((product) => {
                     return (
                       <option key={product.id} value={product.id}>
@@ -270,7 +342,13 @@ class Admin extends React.Component {
                 <input type="submit" value="MODIFY PRODUCT" />
               </div>
               <div className="formItem">
-                <button>DELETE PRODUCT </button>
+                <button onClick={(e) => this.deleteProduct(e)}>
+                  DELETE PRODUCT{" "}
+                </button>
+                {this.state.error && <p>{this.state.error}</p>}
+                {this.state.modifyProductMessage && (
+                  <p>{this.state.modifyProductMessage}</p>
+                )}
               </div>
             </form>
           </>
@@ -333,6 +411,7 @@ class Admin extends React.Component {
                 </label>
                 <div className="formItem">
                   <input required type="submit" value="ADD PRODUCT" />
+                  {this.state.addMessage && <p>{this.state.addMessage}</p>}
                 </div>
               </form>{" "}
             </>
