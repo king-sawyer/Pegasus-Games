@@ -3,7 +3,7 @@ import TokenService from "./token-service";
 
 export default {
   postUser(user) {
-    return fetch(`http://localhost:8000/api/admin`, {
+    return fetch(`https://warm-springs-30260.herokuapp.com/api/admin`, {
       method: "post",
       headers: {
         "Content-type": "application/json",
@@ -14,7 +14,7 @@ export default {
     );
   },
   loginUser(user) {
-    return fetch(`http://localhost:8000/api/auth/login`, {
+    return fetch(`https://warm-springs-30260.herokuapp.com/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

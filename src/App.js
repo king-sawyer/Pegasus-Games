@@ -22,7 +22,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:8000/api/products")
+    fetch("https://warm-springs-30260.herokuapp.com/api/products")
       .then((response) => {
         if (!response.ok) {
           return response.json().then((e) => Promise.reject(e));

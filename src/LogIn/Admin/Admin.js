@@ -134,7 +134,7 @@ class Admin extends React.Component {
     };
     console.log(newProduct);
 
-    fetch(`http://localhost:8000/api/products`, {
+    fetch(`https://warm-springs-30260.herokuapp.com/api/products`, {
       method: "post",
       headers: {
         Authorization: "bearer " + tokenService.hasAuthToken(),
@@ -184,7 +184,7 @@ class Admin extends React.Component {
       featured: featuredSelect.value,
     };
 
-    fetch(`http://localhost:8000/api/products`, {
+    fetch(`https://warm-springs-30260.herokuapp.com/api/products`, {
       method: "PATCH",
       headers: {
         Authorization: "bearer " + tokenService.hasAuthToken(),
@@ -213,7 +213,7 @@ class Admin extends React.Component {
     let { id } = this.state.chosenProduct;
     let productToDelete = { id };
 
-    fetch(`http://localhost:8000/api/products`, {
+    fetch(`https://warm-springs-30260.herokuapp.com/api/products`, {
       method: "DELETE",
       headers: {
         Authorization: "bearer " + tokenService.hasAuthToken(),
