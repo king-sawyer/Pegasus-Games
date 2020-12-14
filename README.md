@@ -15,10 +15,12 @@ This project was created using many different techniques in React including:
 ### In addition to creating this client side application, I created a backend for this project utelizing Heroku to host a database used to store tables for product information and verified users.
 
 
-![mobileView](https://i.imgur.com/eTqGmfm.png)
 
 
 This project is optimized for both mobile and web browsing. 
 
 
 ![boardGamePageImage](https://i.imgur.com/Wb2FrgG.png)
+
+
+![mobileView](https://i.imgur.com/eTqGmfm.png)
