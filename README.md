@@ -1,4 +1,4 @@
-#Pegasus Games
+# Pegasus Games
 
 [Link to live app](https://pegasus-games.king-sawyer.vercel.app/)
 
