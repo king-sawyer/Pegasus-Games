@@ -6,9 +6,9 @@ Pegasus Games is a local board game shop that I was lucky enough to be allowed t
 
 This project was created using many different techniques in React including:
 
--React routing
--Using context to minimize prop drilling
--Utelizing render props to redirect the users location
+- React routing
+- Using context to minimize prop drilling
+- Utelizing render props to redirect the users location
 
 ![mainPageImage](https://i.imgur.com/DLC4D0E.png)
 
