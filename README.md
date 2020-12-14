@@ -4,16 +4,23 @@
 
 Pegasus Games is a local board game shop that I was lucky enough to be allowed to create a website for.
 
+
+
 This project was created using many different techniques in React including:
 
 - React routing
 - Using context to minimize prop drilling
 - Utelizing render props to redirect the users location
+- Both class and functional components
+
+Other Technology Used:
+- JWT authentication used to veryify accurate administrative abilities
+- Advanced CSS
+- JSX used to simulate HTML
 
 ![mainPageImage](https://i.imgur.com/DLC4D0E.png)
 
-## In addition to creating this client side application, I created a backend for this project utelizing Heroku to host a database used to store tables for product information and verified users.
-
+In addition to creating this client side application, I created a backend for this project utelizing Heroku to host a database used to store tables for product information and verified users.
 
 
 
@@ -24,3 +31,14 @@ This project is optimized for both mobile and web browsing.
 
 
 ![mobileView](https://i.imgur.com/eTqGmfm.png)
+
+
+
+## API Documentation:
+- GET /api/products returns all products in the table
+- POST /api/auth/login compares the users username and password with the stored information in the users table to veryify their credentials and logs them in.
+- POST /api/products verifies the user has a valid bearer token and allows the user to add a new product to the products table
+- PATCH /api/products verifies the user has a valid bearer token and allows the user to modify a product in the products table
+- DELETE /api/products verifies the user has a valid bearer token and allows the user to delete product from the products table
+
+-
