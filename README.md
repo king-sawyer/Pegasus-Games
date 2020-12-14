@@ -40,5 +40,3 @@ This project is optimized for both mobile and web browsing.
 - POST /api/products verifies the user has a valid bearer token and allows the user to add a new product to the products table
 - PATCH /api/products verifies the user has a valid bearer token and allows the user to modify a product in the products table
 - DELETE /api/products verifies the user has a valid bearer token and allows the user to delete product from the products table
-
--
